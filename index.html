@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rajesh S — Motivated B.Sc. Computer Science (AI & ML) student at Takshashila University. Web Developer and Hackathon Competitor." />
+  <title>Rajesh S | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== CANVAS: Stars & Galaxy ========== -->
+  <canvas id="spaceCanvas"></canvas>
+
+  <!-- ========== SPLASH OVERLAY ========== -->
+  <div id="splashOverlay"></div>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo" id="logoBtn">
+        <span>Rajesh's Portfolio</span>
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"       class="nav-link splash-btn" data-color="#a78bfa">Home</a></li>
+        <li><a href="#about"      class="nav-link splash-btn" data-color="#38bdf8">About</a></li>
+        <li><a href="#skills"     class="nav-link splash-btn" data-color="#34d399">Skills</a></li>
+        <li><a href="#projects"   class="nav-link splash-btn" data-color="#f97316">Projects</a></li>
+        <li><a href="#hackathons" class="nav-link splash-btn" data-color="#f59e0b">Hackathons</a></li>
+        <li><a href="#contact"    class="nav-link splash-btn" data-color="#a78bfa">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section id="home" class="hero-section">
+    <div class="hero-container">
+      <div class="hero-text">
+        <p class="hero-greeting">👋 Hello, I'm</p>
+        <h1 class="hero-name">
+          <span class="name-word gradient-text">Rajesh S</span>
+        </h1>
+        <div class="hero-typewriter">
+          <span id="typewriter"></span><span class="cursor">|</span>
+        </div>
+        <p class="hero-desc">
+          Building the future at the intersection of intelligent software development and interactive user experiences. I specialize in designing clean web solutions and solving real-world challenges. 🚀
+        </p>
+        <div class="hero-badge">
+          <span class="badge-pill" style="--bc:#a78bfa">🎓 BSc CS (AI & ML)</span>
+          <span class="badge-pill" style="--bc:#38bdf8">🏛️ Takshashila University</span>
+          <span class="badge-pill" style="--bc:#34d399">📍 Tamil Nadu, India</span>
+        </div>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary splash-btn" data-color="#a78bfa" id="viewWorkBtn">
+            <span>View Projects</span>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#contact" class="btn btn-outline splash-btn" data-color="#f472b6" id="hireMeBtn">
+            <span>Let's Connect</span>
+          </a>
+        </div>
+       
+      </div>
+      <div class="hero-image-wrapper">
+        <div class="orbit-ring ring-1"></div>
+        <div class="orbit-ring ring-2"></div>
+        <div class="orbit-ring ring-3"></div>
+        <div class="orbit-dot dot-1"></div>
+        <div class="orbit-dot dot-2"></div>
+        <div class="orbit-dot dot-3"></div>
+        <div class="hero-image-frame">
+          <img src="profile.png" alt="Rajesh — Digital Marketing Enthusiast" class="hero-image" id="profileImg" />
+          <div class="image-glow"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section id="about" class="section about-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">About Me</span>
+        <h2 class="section-title">Who Am <span class="gradient-text">I?</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card glass-card reveal">
+          <div class="about-icon">🎯</div>
+          <h3>Who I Am</h3>
+          <p>I'm <strong>Rajesh</strong>, a 1st year B.Sc. CS AIML student at <strong>Takshashila University, Villupuram</strong>. I'm a digital marketing enthusiast with a passion for building brands and connecting businesses with their audiences online.</p>
+        </div>
+        <div class="about-card glass-card reveal">
+          <div class="about-icon">💻</div>
+          <h3>My Passion</h3>
+          <p>Digital Marketing, Social Media Strategy, Branding & Content Creation are my core interests. I love crafting stories that resonate and campaigns that convert - turning ideas into impactful online experiences.</p>
+        </div>
+        <div class="about-card glass-card reveal">
+          <div class="about-icon">🏆</div>
+          <h3>My Drive</h3>
+          <p>Participating in national and international hackathons allows me to design digital identity solutions, educational tools, and web prototypes. I thrive in collaborative, fast-paced coding sprints.</p>
+        </div>
+      </div>
+      <div class="about-stats reveal">
+        <div class="stat-item">
+          <span class="stat-number" data-target="9.1">0</span><span class="stat-symbol">/10</span>
+          <span class="stat-label">CGPA (Semester I)</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="7">0</span><span class="stat-symbol">+</span>
+          <span class="stat-label">Hackathons</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="5">0</span><span class="stat-symbol">+</span>
+          <span class="stat-label">National Level</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="1">0</span><span class="stat-symbol">st</span>
+          <span class="stat-label">International Level</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS SECTION ========== -->
+  <section id="skills" class="section skills-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">What I Know</span>
+        <h2 class="section-title">My <span class="gradient-text">Skills</span></h2>
+      </div>
+      <div class="skills-grid">
+
+        <!-- Technical & Frontend Development -->
+        <div class="skill-category glass-card reveal">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">💻</span> Technical & Frontend Dev
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>HTML & CSS</span><span>92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="92" style="--color:#a78bfa"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Static Web Development</span><span>88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88" style="--color:#38bdf8"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>GitHub Hosting & Portfolio Management</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85" style="--color:#34d399"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Responsive Web Design</span><span>88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88" style="--color:#f59e0b"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI & ML Foundations -->
+        <div class="skill-category glass-card reveal">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">🤖</span> AI & ML Foundations
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>Python Programming</span><span>80%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="80" style="--color:#34d399"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Machine Learning Basics</span><span>75%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="75" style="--color:#f97316"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Artificial Intelligence Concepts</span><span>78%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="78" style="--color:#a78bfa"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Technology Innovation</span><span>82%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="82" style="--color:#f472b6"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Professional & Soft Skills -->
+        <div class="skill-category glass-card reveal">
+          <h3 class="skill-cat-title">
+            <span class="skill-cat-icon">🚀</span> Professional & Soft Skills
+          </h3>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-header"><span>Problem Solving</span><span>90%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="90" style="--color:#38bdf8"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Team Collaboration</span><span>92%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="92" style="--color:#34d399"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Communication Skills</span><span>88%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="88" style="--color:#fbbf24"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-header"><span>Branding & Content Creation</span><span>85%</span></div>
+              <div class="skill-bar"><div class="skill-fill" data-width="85" style="--color:#818cf8"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Tool Tags -->
+      <div class="tech-tags reveal">
+        <span class="tech-tag" style="--tc:#f472b6">HTML</span>
+        <span class="tech-tag" style="--tc:#38bdf8">CSS</span>
+        <span class="tech-tag" style="--tc:#a78bfa">JavaScript</span>
+        <span class="tech-tag" style="--tc:#f59e0b">Static Web Dev</span>
+        <span class="tech-tag" style="--tc:#34d399">GitHub Hosting</span>
+        <span class="tech-tag" style="--tc:#f97316">Python</span>
+        <span class="tech-tag" style="--tc:#818cf8">AI & ML</span>
+        <span class="tech-tag" style="--tc:#38bdf8">Canva</span>
+        <span class="tech-tag" style="--tc:#f472b6">Content Creation</span>
+        <span class="tech-tag" style="--tc:#fbbf24">Team Collaboration</span>
+        <span class="tech-tag" style="--tc:#a78bfa">Problem Solving</span>
+        <span class="tech-tag" style="--tc:#34d399">Communication</span>
+      </div>
+    </div>
+  </section>
+  <!-- ========== PROJECTS SECTION ========== -->
+  <section id="projects" class="section projects-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Work</span>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+      </div>
+      <div class="projects-grid">
+        
+        <!-- Project 1: Vijayalakshmi Textiles Website -->
+        <div class="project-card glass-card reveal" style="--gc: var(--purple)">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-number">01</span>
+            <div class="project-links">
+              <a href="https://vijayalakshmitextiles.github.io/selvaraj_muthusamy/" target="_blank" class="project-link splash-btn" data-color="#a78bfa" title="Live Site">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Vijayalakshmi Textiles Website</h3>
+          <p class="project-desc">A premium corporate website featuring structured product displays, custom layouts, and query sections designed to build an online identity for a textile business.</p>
+          <div class="project-tags">
+            <span class="ptag" style="--pc: var(--purple)">HTML</span>
+            <span class="ptag" style="--pc: var(--blue)">CSS</span>
+            <span class="ptag" style="--pc: var(--teal)">Responsive</span>
+            <span class="ptag" style="--pc: var(--orange)">GitHub Pages</span>
+          </div>
+        </div>
+
+        <!-- Project 2: Personal Portfolio Website -->
+        <div class="project-card glass-card reveal" style="--gc: var(--blue)">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-number">02</span>
+            <div class="project-links">
+            </div>
+          </div>
+          <h3 class="project-title">Personal Portfolio Website</h3>
+          <p class="project-desc">A highly custom, space-themed portfolio displaying developer skills, academic progress, and hackathon milestones, using particle bursts and 3D card tilt effects.</p>
+          <div class="project-tags">
+            <span class="ptag" style="--pc: var(--blue)">HTML</span>
+            <span class="ptag" style="--pc: var(--purple)">CSS</span>
+            <span class="ptag" style="--pc: var(--teal)">JavaScript</span>
+            <span class="ptag" style="--pc: var(--orange)">GitHub Pages</span>
+          </div>
+        </div>
+
+        <!-- Project 3: Gram Shiksha Connect -->
+        <div class="project-card glass-card reveal" style="--gc: var(--teal)">
+          <div class="project-glow"></div>
+          <div class="project-header">
+            <span class="project-number">03</span>
+            <div class="project-links">
+              <a href="https://69b4df844f766d0e92edadbe--joyful-pothos-247e4a.netlify.app/" target="_blank" class="project-link splash-btn" data-color="#34d399" title="Live Site">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="project-title">Gram Shiksha Connect</h3>
+          <p class="project-desc">An educational technology platform built to bridge rural training needs, featuring interactive class resource databases and user dashboard panels.</p>
+          <div class="project-tags">
+            <span class="ptag" style="--pc: var(--teal)">Team Project</span>
+            <span class="ptag" style="--pc: var(--purple)">EdTech</span>
+            <span class="ptag" style="--pc: var(--yellow)">Planning</span>
+            <span class="ptag" style="--pc: var(--blue)">Collaboration</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HACKATHONS SECTION ========== -->
+  <section id="hackathons" class="section hackathons-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">My Achievements</span>
+        <h2 class="section-title">7+ <span class="gradient-text">Hackathons</span></h2>
+        <p class="section-sub">Competing at national & international levels, building innovative solutions under pressure</p>
+      </div>
+
+      <div class="hackathon-timeline">
+
+        <!-- Semester 1 -->
+        <div class="semester-label reveal">
+          <span class="sem-badge">📚 Semester 1</span>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack1">
+          <div class="hack-glow" style="--hc:#f59e0b"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#f59e0b">🇮🇳</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#f59e0b">National Level</span>
+              <span class="hack-mode online">Online</span>
+            </div>
+            <h3 class="hack-title">Smart India Hackathon 2025</h3>
+            <p class="hack-desc">Participated in India's largest hackathon platform organized by the Government of India, bringing innovative tech solutions to real-world national problems.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#f59e0b">SIH 2025</span>
+              <span class="htag" style="--htc:#38bdf8">Govt. of India</span>
+              <span class="htag" style="--htc:#34d399">Innovation</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Semester 2 -->
+        <div class="semester-label reveal">
+          <span class="sem-badge">📚 Semester 2</span>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack2">
+          <div class="hack-glow" style="--hc:#818cf8"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#818cf8">🌍</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#818cf8">International Level</span>
+              <span class="hack-mode online">Online</span>
+            </div>
+            <h3 class="hack-title">KPR Hackathon 360° 3.0</h3>
+            <p class="hack-desc">Competed across two rounds — Round 1 (January, Intermediate) and Round 2 (February, Semi-Final) — in this international hackathon, showcasing problem-solving and teamwork on a global stage.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#818cf8">International</span>
+              <span class="htag" style="--htc:#f472b6">Round 1 — Jan</span>
+              <span class="htag" style="--htc:#a78bfa">Round 2 — Feb</span>
+              <span class="htag" style="--htc:#38bdf8">Semi-Final</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack3">
+          <div class="hack-glow" style="--hc:#38bdf8"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#38bdf8">🆔</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#38bdf8">National Level</span>
+              <span class="hack-mode online">Online</span>
+            </div>
+            <h3 class="hack-title">UDAI Aadhaar Mapping Project 2026</h3>
+            <p class="hack-desc">Developed an innovative solution for Aadhaar-based identity mapping at a national level — addressing real governmental challenges in digital identity infrastructure.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#38bdf8">National</span>
+              <span class="htag" style="--htc:#34d399">UDAI</span>
+              <span class="htag" style="--htc:#f59e0b">GovTech</span>
+              <span class="htag" style="--htc:#a78bfa">2026</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack4">
+          <div class="hack-glow" style="--hc:#f472b6"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#f472b6">🏫</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#f472b6">Final Round</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">CIT Hackathon — Hackerz 2026</h3>
+            <p class="hack-desc">Made it to the Final Round, competing offline at Chennai Institute of Technology. Demonstrated technical innovation and real-world application skills in a live competitive environment.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#f472b6">Final Round</span>
+              <span class="htag" style="--htc:#38bdf8">CIT Chennai</span>
+              <span class="htag" style="--htc:#34d399">Offline</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack5">
+          <div class="hack-glow" style="--hc:#34d399"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#34d399">🏆</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#34d399">National Level</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">Createx 2026 Hackathon</h3>
+            <p class="hack-desc">Reached the Final Round at Marudhar Kesari Jain College, Tirupattur — a national-level hackathon challenging participants to create impactful and creative tech solutions.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#34d399">National</span>
+              <span class="htag" style="--htc:#f59e0b">Final Round</span>
+              <span class="htag" style="--htc:#a78bfa">Tirupattur</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack6">
+          <div class="hack-glow" style="--hc:#f97316"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#f97316">⏱️</div>
+            <div class="hack-line"></div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#f97316">24-Hour Sprint</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">HackIndia 2026</h3>
+            <p class="hack-desc">A gruelling 24-hour offline hackathon at Mailam Engineering College — pushing the limits of creativity and endurance to build fully functional prototypes in one day.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#f97316">24 Hours</span>
+              <span class="htag" style="--htc:#38bdf8">Mailam</span>
+              <span class="htag" style="--htc:#34d399">Offline</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hack-card glass-card reveal" id="hack7">
+          <div class="hack-glow" style="--hc:#a78bfa"></div>
+          <div class="hack-left">
+            <div class="hack-icon" style="--hic:#a78bfa">🌠</div>
+          </div>
+          <div class="hack-body">
+            <div class="hack-meta">
+              <span class="hack-level" style="--lc:#a78bfa">48-Hour Marathon</span>
+              <span class="hack-mode offline">Offline</span>
+            </div>
+            <h3 class="hack-title">Auristra 26 Hackathon</h3>
+            <p class="hack-desc">An epic 48-hour offline hackathon at <strong>Takshashila University College</strong> — my home ground! Pushed creativity and stamina to build, iterate, and present breakthrough solutions over two full days.</p>
+            <div class="hack-tags">
+              <span class="htag" style="--htc:#a78bfa">48 Hours</span>
+              <span class="htag" style="--htc:#f472b6">Takshashila</span>
+              <span class="htag" style="--htc:#38bdf8">Offline</span>
+              <span class="htag" style="--htc:#34d399">2026</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /hackathon-timeline -->
+    </div>
+  </section>
+  <!-- ========== CONTACT SECTION ========== -->
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">Get In Touch</span>
+        <h2 class="section-title">Let's <span class="gradient-text">Connect</span></h2>
+      </div>
+      <div class="contact-cards-grid">
+        
+        <a href="tel:+919342199463" class="contact-card-link glass-card reveal" style="--gc: var(--purple)">
+          <div class="contact-card-glow"></div>
+          <div class="contact-card-icon">📞</div>
+          <div class="contact-card-title">Phone</div>
+          <div class="contact-card-value">+91 9342199463</div>
+        </a>
+        
+        <a href="mailto:rajes8659@gmail.com" class="contact-card-link glass-card reveal" style="--gc: var(--blue)">
+          <div class="contact-card-glow"></div>
+          <div class="contact-card-icon">📧</div>
+          <div class="contact-card-title">Email</div>
+          <div class="contact-card-value">rajes8659@gmail.com</div>
+        </a>
+
+        <a href="https://github.com/rajes44" target="_blank" class="contact-card-link glass-card reveal" style="--gc: var(--teal)">
+          <div class="contact-card-glow"></div>
+          <div class="contact-card-icon">💻</div>
+          <div class="contact-card-title">GitHub</div>
+          <div class="contact-card-value">github.com/rajes44</div>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rajesh-s-691733379" target="_blank" class="contact-card-link glass-card reveal" style="--gc: var(--pink)">
+          <div class="contact-card-glow"></div>
+          <div class="contact-card-icon">💼</div>
+          <div class="contact-card-title">LinkedIn</div>
+          <div class="contact-card-value">Rajesh S</div>
+        </a>
+
+        <a href="https://wa.me/919342199463" target="_blank" class="contact-card-link glass-card reveal" style="--gc: var(--orange)">
+          <div class="contact-card-glow"></div>
+          <div class="contact-card-icon">💬</div>
+          <div class="contact-card-title">WhatsApp</div>
+          <div class="contact-card-value">Chat Now</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-inner">
+        <p class="footer-copy">© 2026 <strong>Rajesh S</strong> · Crafted with <span class="heart">♥</span> among the stars.</p>
+        <a href="#home" class="back-to-top splash-btn" data-color="#a78bfa" id="backTopBtn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 15l-6-6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
