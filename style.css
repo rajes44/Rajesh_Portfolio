@@ -1855,3 +1855,120 @@ body {
   .intern-doc-btns { flex-direction: column; }
   .intern-doc-btn  { justify-content: center; }
 }
+
+/* =============================================
+   LINKEDIN LEARNING — 100+ CERTS BANNER
+   ============================================= */
+
+.linkedin-cert-banner {
+  position: relative;
+  overflow: hidden;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.li-banner-glow {
+  position: absolute;
+  top: -30px; left: -30px;
+  width: 200px; height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(10,102,194,0.25), transparent 70%);
+  pointer-events: none;
+}
+
+.li-banner-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.li-logo-box {
+  flex-shrink: 0;
+  width: 60px; height: 60px;
+  border-radius: 14px;
+  background: rgba(10,102,194,0.12);
+  border: 1px solid rgba(10,102,194,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.li-banner-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.li-platform-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #0A66C2;
+}
+
+.li-banner-title {
+  font-family: var(--font2);
+  font-size: 1.6rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #0A66C2, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.li-banner-sub {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+.li-topics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.li-topic {
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--tc) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--tc) 35%, transparent);
+  color: var(--tc);
+}
+
+.li-view-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(135deg, #0A66C2, #0284c7);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s var(--transition);
+  align-self: flex-start;
+  box-shadow: 0 8px 24px rgba(10,102,194,0.35);
+}
+
+.li-view-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(10,102,194,0.5);
+}
+
+@media (max-width: 640px) {
+  .linkedin-cert-banner { padding: 20px; }
+  .li-banner-title { font-size: 1.3rem; }
+  .li-logo-box { width: 48px; height: 48px; }
+  .li-view-btn { width: 100%; justify-content: center; }
+}
