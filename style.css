@@ -1197,9 +1197,6 @@ body {
 }
 
 /* =============================================
-   KEYFRAME ANIMATIONS
-   ============================================= */
-
 @keyframes fadeInUp {
   from { opacity: 0; transform: translateY(30px); }
   to   { opacity: 1; transform: translateY(0); }
@@ -1208,4 +1205,316 @@ body {
 @keyframes fadeInRight {
   from { opacity: 0; transform: translateX(40px); }
   to   { opacity: 1; transform: translateX(0); }
+}
+
+/* =============================================
+   CERTIFICATES SECTION
+   ============================================= */
+
+.section-sub {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.cert-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--radius);
+  transition: all 0.4s var(--transition);
+  display: flex;
+  flex-direction: column;
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  border-color: color-mix(in srgb, var(--cc) 40%, transparent);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.4), 0 0 0 1px color-mix(in srgb, var(--cc) 20%, transparent);
+}
+
+.cert-glow {
+  position: absolute;
+  top: 0; right: 0;
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--cc) 25%, transparent), transparent 70%);
+  pointer-events: none;
+  transition: all 0.4s var(--transition);
+}
+
+.cert-card:hover .cert-glow {
+  width: 200px; height: 200px;
+}
+
+/* Certificate image preview */
+.cert-preview-link {
+  display: block;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+.cert-preview {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.cert-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+  transition: transform 0.4s var(--transition);
+  display: block;
+}
+
+.cert-card:hover .cert-img {
+  transform: scale(1.04);
+}
+
+.cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s var(--transition);
+}
+
+.cert-overlay span {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--cc) 40%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cc) 60%, transparent);
+  padding: 8px 20px;
+  border-radius: 50px;
+  backdrop-filter: blur(8px);
+}
+
+.cert-card:hover .cert-overlay {
+  opacity: 1;
+}
+
+/* Certificate body */
+.cert-body {
+  padding: 20px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+
+.cert-issuer {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ic, var(--purple));
+  display: block;
+}
+
+.cert-title {
+  font-family: var(--font2);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  flex: 1;
+}
+
+.cert-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.cert-date {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.cert-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--cc) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--cc) 40%, transparent);
+  color: var(--cc, var(--purple));
+  transition: all 0.3s var(--transition);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cert-btn:hover {
+  background: color-mix(in srgb, var(--cc) 25%, transparent);
+  border-color: var(--cc, var(--purple));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px color-mix(in srgb, var(--cc) 30%, transparent);
+}
+
+/* =============================================
+   INTERNSHIPS SECTION
+   ============================================= */
+
+.intern-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.intern-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 24px;
+  padding: 28px;
+  transition: all 0.4s var(--transition);
+  align-items: flex-start;
+}
+
+.intern-card:hover {
+  transform: translateY(-5px);
+  border-color: color-mix(in srgb, var(--ic2) 40%, transparent);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+}
+
+.intern-glow {
+  position: absolute;
+  top: 0; right: 0;
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--ic2) 20%, transparent), transparent 70%);
+  pointer-events: none;
+  transition: all 0.4s var(--transition);
+}
+
+.intern-card:hover .intern-glow {
+  width: 240px; height: 240px;
+}
+
+.intern-left {
+  flex-shrink: 0;
+}
+
+.intern-logo-wrap {
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  background: color-mix(in srgb, var(--ilc) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--ilc) 35%, transparent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+}
+
+.intern-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.intern-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.intern-company {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--icc, var(--purple));
+}
+
+.intern-mode {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3px 10px;
+  border-radius: 50px;
+}
+
+.intern-role {
+  font-family: var(--font2);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.intern-duration {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.intern-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+.intern-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.itag {
+  padding: 4px 14px;
+  border-radius: 50px;
+  border: 1px solid var(--itc, var(--purple));
+  color: var(--itc, var(--purple));
+  background: color-mix(in srgb, var(--itc, var(--purple)) 10%, transparent);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+/* =============================================
+   RESPONSIVE — Certificates & Internships
+   ============================================= */
+
+@media (max-width: 640px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .intern-card {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .cert-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
