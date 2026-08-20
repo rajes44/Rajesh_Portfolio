@@ -1777,3 +1777,81 @@ body {
     align-items: flex-start;
   }
 }
+
+/* =============================================
+   INTERNSHIP EXTRA STYLES (docs, org, aicte)
+   ============================================= */
+
+.intern-org-detail {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-top: 2px;
+}
+
+.intern-aicte-id {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+.intern-aicte-id code {
+  font-family: monospace;
+  font-size: 0.73rem;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 2px 8px;
+  border-radius: 6px;
+  color: #94a3b8;
+  word-break: break-all;
+}
+
+.intern-docs {
+  margin-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.intern-docs-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.intern-doc-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.intern-doc-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  background: color-mix(in srgb, var(--dc, var(--purple)) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--dc, var(--purple)) 35%, transparent);
+  color: color-mix(in srgb, var(--dc, var(--purple)) 90%, #fff);
+  cursor: pointer;
+  transition: all 0.25s var(--transition);
+  font-family: var(--font1);
+}
+
+.intern-doc-btn:hover {
+  background: color-mix(in srgb, var(--dc, var(--purple)) 22%, transparent);
+  border-color: var(--dc, var(--purple));
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px color-mix(in srgb, var(--dc, var(--purple)) 25%, transparent);
+}
+
+@media (max-width: 640px) {
+  .intern-doc-btns { flex-direction: column; }
+  .intern-doc-btn  { justify-content: center; }
+}

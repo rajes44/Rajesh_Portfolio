@@ -576,16 +576,16 @@ function initCertModal() {
 
   if (!modal) return;
 
-  function openModal(card) {
-    const img   = card.dataset.img;
-    const title = card.dataset.title || '';
-    const link  = card.dataset.link  || '';
+  function openModal(el) {
+    const img   = el.dataset.img;
+    const title = el.dataset.title || '';
+    const link  = el.dataset.link  || '';
 
-    modalImg.src       = img;
+    modalImg.src           = img;
     modalTitle.textContent = title;
 
     if (link) {
-      verifyBtn.href  = link;
+      verifyBtn.href         = link;
       verifyBtn.style.display = 'inline-flex';
     } else {
       verifyBtn.style.display = 'none';
@@ -601,9 +601,17 @@ function initCertModal() {
     setTimeout(() => { modalImg.src = ''; }, 350);
   }
 
-  // Click on any cert card
+  // Cert cards
   document.querySelectorAll('.cert-card[data-img]').forEach(card => {
     card.addEventListener('click', () => openModal(card));
+  });
+
+  // Internship document buttons
+  document.querySelectorAll('.cert-card-trigger[data-img]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.stopPropagation();
+      openModal(btn);
+    });
   });
 
   // Close handlers
