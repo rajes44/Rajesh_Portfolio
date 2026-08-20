@@ -563,6 +563,57 @@ window.addEventListener('resize', () => {
   initSpace();
 });
 
+// ============================================
+// CERTIFICATE MODAL LIGHTBOX
+// ============================================
+function initCertModal() {
+  const modal     = document.getElementById('certModal');
+  const backdrop  = document.getElementById('certModalBackdrop');
+  const closeBtn  = document.getElementById('certModalClose');
+  const modalImg  = document.getElementById('certModalImg');
+  const modalTitle= document.getElementById('certModalTitle');
+  const verifyBtn = document.getElementById('certModalVerify');
+
+  if (!modal) return;
+
+  function openModal(card) {
+    const img   = card.dataset.img;
+    const title = card.dataset.title || '';
+    const link  = card.dataset.link  || '';
+
+    modalImg.src       = img;
+    modalTitle.textContent = title;
+
+    if (link) {
+      verifyBtn.href  = link;
+      verifyBtn.style.display = 'inline-flex';
+    } else {
+      verifyBtn.style.display = 'none';
+    }
+
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    setTimeout(() => { modalImg.src = ''; }, 350);
+  }
+
+  // Click on any cert card
+  document.querySelectorAll('.cert-card[data-img]').forEach(card => {
+    card.addEventListener('click', () => openModal(card));
+  });
+
+  // Close handlers
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   resize();
   initSpace();
@@ -578,4 +629,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initParticleBurst();
   initSectionEffects();
   initTilt();
+  initCertModal();
 });
