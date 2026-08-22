@@ -1972,3 +1972,290 @@ body {
   .li-logo-box { width: 48px; height: 48px; }
   .li-view-btn { width: 100%; justify-content: center; }
 }
+
+/* =============================================
+   LINKEDIN LEARNING — VIBEY REDESIGN
+   ============================================= */
+
+.li-feat-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: rgba(10, 10, 30, 0.7);
+  border: 1px solid rgba(10, 102, 194, 0.2);
+  padding: 0;
+}
+
+/* Animated rainbow border */
+.li-feat-border {
+  position: absolute;
+  inset: -2px;
+  border-radius: 26px;
+  background: conic-gradient(
+    from var(--angle, 0deg),
+    #0A66C2, #38bdf8, #a78bfa, #f472b6, #0A66C2
+  );
+  z-index: 0;
+  animation: liRotate 4s linear infinite;
+  opacity: 0.6;
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes liRotate {
+  to { --angle: 360deg; }
+}
+
+/* Cover border with background leaving only the border */
+.li-feat-card::before {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 23px;
+  background: rgba(8, 8, 24, 0.92);
+  z-index: 1;
+}
+
+/* Glowing orbs */
+.li-orb {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+  filter: blur(60px);
+  opacity: 0.35;
+}
+
+.li-orb-1 {
+  width: 300px; height: 300px;
+  background: #0A66C2;
+  top: -80px; left: -80px;
+  animation: liOrb1 6s ease-in-out infinite alternate;
+}
+
+.li-orb-2 {
+  width: 200px; height: 200px;
+  background: #a78bfa;
+  bottom: -60px; right: 20%;
+  animation: liOrb2 8s ease-in-out infinite alternate;
+}
+
+.li-orb-3 {
+  width: 150px; height: 150px;
+  background: #38bdf8;
+  top: 30%; right: -40px;
+  animation: liOrb3 7s ease-in-out infinite alternate;
+}
+
+@keyframes liOrb1 { to { transform: translate(30px, 20px) scale(1.1); } }
+@keyframes liOrb2 { to { transform: translate(-20px, -30px) scale(1.15); } }
+@keyframes liOrb3 { to { transform: translate(-20px, 20px) scale(0.9); } }
+
+/* Inner layout */
+.li-feat-inner {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 0;
+  min-height: 220px;
+}
+
+/* LEFT STAT COLUMN */
+.li-feat-stat-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 36px 24px;
+  border-right: 1px solid rgba(10, 102, 194, 0.2);
+  background: rgba(10, 102, 194, 0.07);
+  text-align: center;
+}
+
+.li-feat-logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #60a5fa;
+  margin-bottom: 6px;
+}
+
+.li-feat-counter {
+  display: flex;
+  align-items: flex-start;
+  line-height: 1;
+}
+
+.li-counter-num {
+  font-family: var(--font2);
+  font-size: 4.5rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #60a5fa, #a78bfa, #38bdf8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: liCounterPulse 3s ease-in-out infinite;
+}
+
+.li-counter-plus {
+  font-family: var(--font2);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: #f472b6;
+  margin-top: 6px;
+}
+
+@keyframes liCounterPulse {
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(96,165,250,0.5)); }
+  50% { filter: drop-shadow(0 0 24px rgba(167,139,250,0.8)); }
+}
+
+.li-feat-counter-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.li-feat-verified {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #34d399;
+  margin-top: 4px;
+}
+
+.li-verified-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 8px #34d399;
+  animation: liDotPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes liDotPulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.5); opacity: 0.7; }
+}
+
+/* RIGHT INFO COLUMN */
+.li-feat-info-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding: 32px 32px;
+}
+
+.li-feat-desc {
+  font-size: 0.92rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.7;
+}
+
+.li-feat-desc strong {
+  color: #60a5fa;
+}
+
+/* MARQUEE */
+.li-marquee-wrap {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.li-marquee-track {
+  display: flex;
+  gap: 10px;
+  width: max-content;
+  animation: liMarquee 28s linear infinite;
+}
+
+.li-marquee-wrap:hover .li-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes liMarquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.li-pill {
+  flex-shrink: 0;
+  padding: 6px 16px;
+  border-radius: 50px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--pc) 14%, transparent);
+  border: 1px solid color-mix(in srgb, var(--pc) 40%, transparent);
+  color: var(--pc);
+  white-space: nowrap;
+  transition: all 0.2s;
+}
+
+.li-pill:hover {
+  background: color-mix(in srgb, var(--pc) 25%, transparent);
+  transform: translateY(-2px);
+}
+
+/* CTA BUTTON */
+.li-feat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 26px;
+  border-radius: 50px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: linear-gradient(135deg, #0A66C2 0%, #1d4ed8 50%, #7c3aed 100%);
+  color: #fff;
+  align-self: flex-start;
+  transition: all 0.3s var(--transition);
+  box-shadow: 0 0 20px rgba(10,102,194,0.4), 0 4px 15px rgba(0,0,0,0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.li-feat-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.li-feat-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 35px rgba(10,102,194,0.6), 0 8px 25px rgba(0,0,0,0.4);
+}
+
+.li-feat-btn:hover::before { opacity: 1; }
+
+@media (max-width: 768px) {
+  .li-feat-inner {
+    grid-template-columns: 1fr;
+  }
+  .li-feat-stat-col {
+    border-right: none;
+    border-bottom: 1px solid rgba(10,102,194,0.2);
+    padding: 28px 20px;
+  }
+  .li-counter-num { font-size: 3.5rem; }
+  .li-feat-info-col { padding: 24px 20px; }
+  .li-feat-btn { width: 100%; justify-content: center; }
+}
