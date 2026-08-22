@@ -2259,3 +2259,163 @@ body {
   .li-feat-info-col { padding: 24px 20px; }
   .li-feat-btn { width: 100%; justify-content: center; }
 }
+
+/* =============================================
+   LINKEDIN BADGES CARD
+   ============================================= */
+.li-badge-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(10,10,30,0.6);
+  border: 1px solid rgba(0,120,212,0.2);
+  padding: 0;
+}
+
+.li-badge-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 10% 50%, rgba(0,120,212,0.12), transparent 60%),
+              radial-gradient(ellipse at 90% 50%, rgba(52,211,153,0.08), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.li-badge-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0;
+  min-height: 180px;
+}
+
+.li-badge-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 28px 20px;
+  border-right: 1px solid rgba(0,120,212,0.15);
+  background: rgba(0,120,212,0.06);
+  text-align: center;
+}
+
+.li-badge-icons {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.li-b-icon {
+  font-size: 1.4rem;
+  display: inline-block;
+  animation: liBadgeBounce 2s ease-in-out infinite;
+  filter: drop-shadow(0 0 8px var(--bc));
+}
+
+@keyframes liBadgeBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.li-badge-stat {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  line-height: 1;
+}
+
+.li-badge-count {
+  font-family: var(--font2);
+  font-size: 3rem;
+  font-weight: 900;
+  background: linear-gradient(135deg, #0078d4, #00b4f0, #34d399);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.li-badge-unit {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.li-badge-sub {
+  font-size: 0.72rem;
+  color: #34d399;
+  font-weight: 600;
+}
+
+/* RIGHT */
+.li-badge-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: 28px 30px;
+}
+
+.li-badge-title {
+  font-family: var(--font2);
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.li-badge-desc {
+  font-size: 0.87rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+}
+
+.li-badge-platforms {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.li-bplatform {
+  padding: 5px 14px;
+  border-radius: 50px;
+  font-size: 0.76rem;
+  font-weight: 600;
+  background: color-mix(in srgb, var(--bp) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--bp) 35%, transparent);
+  color: var(--bp);
+}
+
+.li-badge-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 20px;
+  border-radius: 50px;
+  font-size: 0.83rem;
+  font-weight: 700;
+  text-decoration: none;
+  background: rgba(0,120,212,0.15);
+  border: 1px solid rgba(0,120,212,0.4);
+  color: #60a5fa;
+  align-self: flex-start;
+  transition: all 0.3s var(--transition);
+}
+
+.li-badge-btn:hover {
+  background: rgba(0,120,212,0.3);
+  border-color: rgba(0,120,212,0.7);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,120,212,0.3);
+}
+
+@media (max-width: 768px) {
+  .li-badge-inner { grid-template-columns: 1fr; }
+  .li-badge-left { border-right: none; border-bottom: 1px solid rgba(0,120,212,0.15); padding: 20px; }
+  .li-badge-right { padding: 20px; }
+  .li-badge-btn { width: 100%; justify-content: center; }
+}
